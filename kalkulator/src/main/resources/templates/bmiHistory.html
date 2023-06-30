@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>BMI History</title>
+</head>
+<body>
+<h1>BMI History</h1>
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Weight (kg)</th>
+    <th>Height (cm)</th>
+    <th>BMI</th>
+  </tr>
+  <tr th:each="bmiEntry : ${bmiEntries}">
+    <td th:text="${bmiEntry.date}"></td>
+    <td th:text="${bmiEntry.weight}"></td>
+    <td th:text="${bmiEntry.height}"></td>
+    <td th:text="${bmiEntry.bmi}"></td>
+  </tr>
+</table>
+<hr>
+<a href="/">Go Back</a>
+</body>
+</html>
